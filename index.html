@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Encryption/Decryption</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Image Encryption/Decryption</h1>
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Encrypt Image</h5>
+                <input type="file" id="image-input" accept="image/*" class="form-control mb-3">
+                <input type="text" id="encryption-key" placeholder="Enter encryption key" class="form-control mb-3">
+                <button class="btn btn-primary" onclick="encryptImage()">Encrypt and Download</button>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Decrypt Image</h5>
+                <input type="file" id="encrypted-file-input" accept=".txt" class="form-control mb-3">
+                <input type="text" id="decryption-key" placeholder="Enter decryption key" class="form-control mb-3">
+                <button class="btn btn-success" onclick="decryptImage()">Decrypt and Show Image</button>
+            </div>
+        </div>
+
+        <div id="image-display" class="mt-4 text-center">
+            <h3>Original Image:</h3>
+            <img id="original-image" src="" alt="Original Image" class="img-fluid" style="display: none;">
+            <h3>Decrypted Image:</h3>
+            <div class="decrypted-image-container">
+                <img id="decrypted-image" src="" alt="Decrypted Image" class="img-fluid" style="display: none;">
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
